@@ -5,156 +5,118 @@ Description:
     This file combines Owen's formatting which contains all employees from the chart.
     It also has Cameron's proof of concept for collapsing nodes.
 -->
-
 <html>
     <head>
-        <link rel="stylesheet" href="latest_respChartStyles.css">
+        <link rel="stylesheet" href="styles.css">
         <script src="https://www.w3schools.com/lib/w3.js"></script> 
     </head>
-    <body>
 
-        <div class="content">
 
-        <h1>Responsive Organization Chart</h1>
+<div class="container"><!--Start of Org Chart Structure-->
+  <h3 class="level-1 rectangle">Robert Cushman</h3><!--Start of Head Parent Block - Level 1-->
+  <ol class="level-2-wrapper"><!--Start of Level 2-->
+    <li>
+      <h2 class="level-2 rectangle">Pam Turner</h2><!--Pam Turner Block-->
+      <ol class="level-3-wrapper"><!--Pam Turner Empty Child Branch-->
+      </ol>
+      <!--Start of Sub Level 2 Stephen Cook, Pat Maxwell, Jeff Thompson-->
+      <h2 class="level-2 rectangle">Stephen Cook</h2>
+      <ol class="level-3-wrapper">
+        <li>
+          <h3 class="level-3 rectangle">Heidi Melens</h3>
+          <ol class="level-4-wrapper">
+          </ol>
+          <h3 class="level-3 rectangle">Terry Eason</h3>
+          <ol class="level-4-wrapper">
+            <li>
+              <h4 class="level-4 rectangle">Mark Maglietto</h4>
+            </li>
+            <li>
+              <h4 class="level-4 rectangle">Sam Lewis</h4>
+            </li>
+          </ol>
+        </li>
+        
+      </ol>
 
-        <figure class="org-chart cf">
 
-            <ul class="administration">
 
-            <li>	
 
-                <ul class="director">
-
-                <li>
-                    
-                    <a href="#" onclick="w3.toggleShow('.robertCushmanCollapse')"><div class="robertCushmanCollapse">Collapse</div><span>Robert Cushman<br>Chief Information Officer</span></a>
-                    <div class="robertCushmanCollapse"><!--collapse all below Robert Cushman-->
-                    <ul class="top1">
-                        <li><a href="#" onclick="w3.toggleShow('.stephenCookCollapse')"><div class="stephenCookCollapse">Collapse</div><span>Stephen Cook</span></a></li>
-                    </ul>
-                    <ul class="top2">
-                        <li><a href="#"><span>Pat Maxwell</span></a></li>
-                    </ul>
-
-                    <ul class="top3">
-                        <!--<li><a href="#"><span>Jeff Thompson</span></a></li>-->
-                        <li class="top3RightDep">
-                            <a href="#" onclick="w3.toggleShow('.robertCushmanCollapse')"><span>Jeff Thompson</span></a>
-                            <ul class="top3Sections">
-                            <li class="top3Sections"><a href="#"><span>Reddy Anugu Sr. Program Software Analyst</span></a></li>
-                            <li class="top3Sections"><a href="#"><span>Laura Dumuhosky Instructional Resources Content Coordinator</span></a></li>
-                            <li class="top3Sections"><a href="#"><span>Shari Hardenbrook Instructional Support Technician</span></a></li>
-                            <li class="top3Sections"><a href="#"><span>Lyndsay Marrone Instructional Designer</span></a></li>
-                            </ul>
-                        </li><!--end class="top3RightDep"-->
-                    </ul><!--end class="top3"-->
-
-                    <ul class="departments">
-
-                        <li><a href="#"><span>Pam Turner<br></span></a></li>
-                        
-                        <li class="department dep-a">
-                            <div class="stephenCookCollapse"><!---to collapse under stephen cook-->
-                            <a href="#" onclick="w3.toggleShow('.heidiMelensCollapse')"><div class="heidiMelensCollapse">Collapse</div><span>Heidi Melens<br>User Services Specialist</span></a>
-                            <div class="heidiMelensCollapse">
-                                <ul class="sections">
-                                </ul>
-                            </div>
-                            </div><!--end class="stephenCookCollapse"-->
-                        </li><!--end class="department dep-a" -- Heidi Melens-->
-
-                        <li class="department dep-b">
-                            <div class="stephenCookCollapse"><!---to collapse under stephen cook-->
-                            <a href="#" onclick="w3.toggleShow('.terryEasonCollapse')"><div class="terryEasonCollapse">Collapse</div><span>Terry Eason<br>Lead<br>Communications Technician</span></a>
-                            <div class="terryEasonCollapse">
-                                <ul class="sections">
-                                <li class="section"><a href="#"><span>Mark Maglietto Communications Technician</span></a></li>
-                                <li class="section"><a href="#"><span>Sam Lewis<br>Communications Technician (Temp)</span></a></li>
-                                </ul>
-                            </div>
-                            </div><!--end class="stephenCookCollapse"-->
-                        </li><!--end class="department dep-b" -- Terry Eason-->
-
-                        <li class="department dep-c">
-                            <div class="stephenCookCollapse"><!---to collapse under stephen cook-->
-                            <a href="#" ><span>John Perevich<br>Manager<br>Systems & Networking</span></a>
-                            <ul class="sections">
-                            <li class="section"><a href="#"><span>Nabil AL Rashdi Systems Network Administrator</span></a></li>
-                            <li class="section"><a href="#"><span>Joe Balonek Network Engineer</span></a></li>
-                            <li class="section"><a href="#"><span>Linda Ketchum Senior Computer Operator</span></a></li>
-                            <li class="section"><a href="#"><span>David Sutton Information Technology Assistant</span></a></li>
-                            <li class="section"><a href="#"><span>Adam Zapata Systems Network Administrator</span></a></li>
-                            <li class="section"><a href="#"><span>Vacant<br>Network Engineer</span></a></li>
-                            </ul>
-                            </div><!--end class="stephenCookCollapse"-->
-                        </li><!--end class="department dep-c" -- John Perevich-->
-
-                        <li class="department dep-d">
-                            <div class="stephenCookCollapse"><!---to collapse under stephen cook-->
-                            <a href="#"><span>Sandra Almekinder<br>Assistant Director<br>Enterprise Systems Programming</span></a>
-                            <ul class="sections">
-                            <li class="section"><a href="#"><span>Joanna Camp Sr Programmer Analyst</span></a></li>
-                            <li class="section"><a href="#"><span>Laura Coriddi Lead Programmer Analyst</span></a></li>
-                            <li class="section"><a href="#"><span>Michael Gamin Lead Programmer Analyst</span></a></li>
-                            <li class="section"><a href="#"><span>Steven McMaster Sr Programmer Analyst</span></a></li>
-                            <li class="section"><a href="#"><span>Dan Murdoch Sr Programmer Analyst</span></a></li>
-                            <li class="section"><a href="#"><span>Kelly Wetherbee Programmer Analyst</span></a></li>
-                            <li class="section"><a href="#"><span>Vacant Programmer Analyst</span></a></li>
-                            <li class="section"><a href="#"><span>Vacant Lead Programmer Analyst</span></a></li>
-                            </ul>
-                            </div><!--end class="stephenCookCollapse"-->
-                        </li><!--end class="department dep-d" -- Sandra Almekinder-->
-
-                        <li class="department dep-e">
-                            <div class="stephenCookCollapse"><!---to collapse under stephen cook-->
-                            <a href="#"><span>Tanasee Conner Assistant Director Technology Support Services</span></a>
-                            <ul class="sections">
-                            <li class="section"><a href="#"><span>Amanda Auriemma Tech. Suport Technician</span></a></li>
-                            <li class="section"><a href="#"><span>Rob Heywood Associate, Technical Services</span></a></li>
-                            <li class="section"><a href="#"><span>Shawn Maher Client Systems Administrator</span></a></li>
-                            <li class="section"><a href="#"><span>Richard Morrison Desktop Support Specialist</span></a></li>
-                            <li class="section"><a href="#"><span>James Onley Client Systems Administrator</span></a></li>
-                            <li class="section"><a href="#"><span>Krystal Perlman IT Service Desk Manager</span></a></li>
-                            </ul>
-                            </div><!--end class="stephenCookCollapse"-->
-                        </li><!--end class="department dep-e" -- Tanasee Conner-->
-
-                        <li class="department dep-f">
-                            <div class="stephenCookCollapse"><!---to collapse under stephen cook-->
-                            <a href="#"><span>Frank Mancini Assistant Director Academic Technology Support</span></a>
-                            <ul class="sections">
-                            <li class="section"><a href="#"><span>Peter Gattie Technology Support Technician</span></a></li>
-                            <li class="section"><a href="#"><span>Amanda Auriemma Tech. Suport Technician</span></a></li>
-                            <li class="section"><a href="#"><span>Keith Gaylor Specialized Computing Technician-Labs</span></a></li>
-                            <li class="section"><a href="#"><span>Kevin Montano Downtown Technology Coordinator</span></a></li>
-                            <li class="section"><a href="#"><span>Kurt Pijanowski Instructional Suport Associate</span></a></li>
-                            </ul>
-                            </div><!--end class="stephenCookCollapse"-->
-                        </li><!--end class="department dep-f" -- Frank Mancini-->
-
-                        <li class="department dep-g">
-                            <div class="stephenCookCollapse"><!---to collapse under stephen cook-->
-                            <a href="#"><span>Brett Eslinger IT Systems Security Administrator (Temp)</span></a>
-                            <ul class="sections">
-                            </ul>
-                            </div><!--end class="stephenCookCollapse"-->
-                        </li><!--end class="department dep-g" -- Brett Eslinger-->
-
-                    </div><!--end class="robertCushmanCollapse"-->
-
-                    </ul><!--end class="departments"-->
-                    
-                </li><!--end li under class="director"-->
-
-                </ul><!--end class="director"-->
-
-            </li><!--end li under class="administration"-->
-
-            </ul><!--end class="administration"-->	
-
-        </figure><!--end class="org-chart cf"-->
-
-        </div><!--end class="content"-->
-    
-    </body>
-    </html>
+        <li>
+          <h3 class="level-3 rectangle">Manager A</h3>
+          <ol class="level-4-wrapper">
+            <li>
+              <h4 class="level-4 rectangle">Person A</h4>
+            </li>
+            <li>
+              <h4 class="level-4 rectangle">Person B</h4>
+            </li>
+            <li>
+              <h4 class="level-4 rectangle">Person C</h4>
+            </li>
+            <li>
+              <h4 class="level-4 rectangle">Person D</h4>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <h3 class="level-3 rectangle">Manager B</h3>
+          <ol class="level-4-wrapper">
+            <li>
+              <h4 class="level-4 rectangle">Person A</h4>
+            </li>
+            <li>
+              <h4 class="level-4 rectangle">Person B</h4>
+            </li>
+            <li>
+              <h4 class="level-4 rectangle">Person C</h4>
+            </li>
+            <li>
+              <h4 class="level-4 rectangle">Person D</h4>
+            </li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li>
+      <h2 class="level-2 rectangle">Director B</h2>
+      <ol class="level-3-wrapper">
+        <li>
+          <h3 class="level-3 rectangle">Manager C</h3>
+          <ol class="level-4-wrapper">
+            <li>
+              <h4 class="level-4 rectangle">Person A</h4>
+            </li>
+            <li>
+              <h4 class="level-4 rectangle">Person B</h4>
+            </li>
+            <li>
+              <h4 class="level-4 rectangle">Person C</h4>
+            </li>
+            <li>
+              <h4 class="level-4 rectangle">Person D</h4>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <h3 class="level-3 rectangle">Manager D</h3>
+          <ol class="level-4-wrapper">
+            <li>
+              <h4 class="level-4 rectangle">Person A</h4>
+            </li>
+            <li>
+              <h4 class="level-4 rectangle">Person B</h4>
+            </li>
+            <li>
+              <h4 class="level-4 rectangle">Person C</h4>
+            </li>
+            <li>
+              <h4 class="level-4 rectangle">Person D</h4>
+            </li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol><!--End of Level 2-->
+  <!--End of Head Parent Level 1-->
+</div>

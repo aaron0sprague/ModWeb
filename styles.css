@@ -1,557 +1,272 @@
-*{
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	position: relative;
-}
-
-.cf:before,
-.cf:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
-}
-
-.cf:after {
-    clear: both;
-}
-
-/**
- * For IE 6/7 only
- * Include this rule to trigger hasLayout and contain floats.
- */
-.cf {
-    *zoom: 1;
-}
-
-/* Generic styling */
-
-body{
-	background: #F5EEC9;	
-}
-
-.content{
-	width: 100%;
-	max-width: 1142px;
-	margin: 0 auto;
-	padding: 0 20px;
-}
-
-/* Adds dotted line after clicking on various nodes */
-a:focus{
-	outline: 2px dashed #f7f7f7;
-}
-
-/* Deals with what window looks like in different screen formats*/
-@media screen and (max-width: 767px){
-	.content{
-		padding: 0 20px;
-	}	
-}
-
-ul{
+/* RESET STYLES & HELPER CLASSES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+:root {
+	--level-1: #005440;
+	--level-2: #005440;
+	--level-3: #005440;
+	--JTNode: #005440;
+	--SCNodeA: #005440;
+	--SCNodeB: #005440;
+	--black: black;
+	--gold: #D4AF37; 
+	--off-green: #2b7135;
+  }
+  
+  * {
 	padding: 0;
 	margin: 0;
-	list-style: none;		
-}
-
-ul a{
-	display: block;
-	background: #ccc;
-	border: 4px solid #fff;
-	text-align: center;
-	overflow: hidden;
-	font-size: .7em;
-	text-decoration: none;
-	font-weight: bold;
-	color: #333;
-	height: 70px;
-	margin-bottom: -26px;
-	box-shadow: 4px 4px 9px -4px rgba(0,0,0,0.4);
-    /* Has no eefect when getting rid of these elements*/
-	-webkit-transition: all linear .1s;
-	-moz-transition: all linear .1s;
-	transition: all linear .1s;
-}
-
-/* Deals with what window looks like in different screen formats*/
-@media print {
-    ul a{
-        border: 4px solid #000;
-    }
-}
-/* Deals with what window looks like in different screen formats*/
-@media screen and (max-width: 767px){
-	ul a{
-		font-size: 1em;
-	}
-}
-
-/* Can alter vertical placement of labels in each box */
-ul a span{
-	top: 50%;
-	margin-top: -0.7em;
-	display: block;
-}
-
-/*
- 
- */
-
-.administration > li > a{
-	margin-bottom: 25px;
-}
-
-.director > li > a{
-	width: 50%;
-	margin: 0 auto 0px auto;
-}
-
-/* Vertical line that extends from top node to upper horizontal connector line*/
-.administration:after{
-	content: "";
-	display: block;
-	width: 0;
-	height: 130px;
-	background: red;
-	border-left: 4px solid #fff;
-	left: 45.45%;
-	position: relative;
-}
-
-
-@media print {
-    .subdirector:after{
-        border-left: 4px solid #000;
-    }
-}
-
-.subdirector,
-.departments{
-	position: absolute;
-	width: 100%;
-}
-
-.top1,.top2,.top3{
-	position: absolute;
-	width: 100%;
-}
-
-.subdirector > li:first-child,
-.departments > li:first-child{	
-	width: 18.59894921190893%;
-	height: 64px;
-	/* Moves entire Department Section across y axis og:92*/
-	margin: 0 auto 220px auto;		
-	padding-top: 25px;
-	border-bottom: 4px solid white;
-	z-index: 1;	
-}
-
-.top1 > li:first-child,
-.top2 > li:first-child{
-	/* og 30*/
-	width: 18.59894921190893%;
-	height: 64px;
-	/* Moves entire Department Section across y axis og:92*/
-	margin: 130 auto 92px auto;		
-	padding-top: 25px;
-	border-bottom: 4px solid white;
-	z-index: 1;	
-}
-
-.top3 > li:first-child {
-	/* og 18.59894921190893%*/
-	width: 12.7%;
-	height: 64px;
-	/* Moves entire Department Section across y axis og:92*/
-	margin: 156 auto 92px auto;
-	/* og 25 */		
-	padding-top: 0px;
-	border-bottom: 4px solid white;
-	z-index: 1;	
-}
-
-@media print {
-    .subdirector > li:first-child,
-    .departments > li:first-child{
-        border-bottom: 4px solid #000;
-    }
-}
-
-/* Creates and moves Assitant director vertical connector and node over x-axis */
-.subdirector > li:first-child{
-	float: right;
-	right: 27.2%;
-	border-left: 4px solid white;
-}
-
-.top1 > li:first-child{
-	float: left;
-	/*border-left: 4px solid white;*/
-	height: -50px;
-}
-
-.top2 > li:first-child{
-	float: middle;
-	/*border-left: 4px solid white;*/
-}
-
-/*Important!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
-.top3 > li:first-child{
-	float: right;
-	/* Move entire jeff thompson column */
-	left: 4%;
-	border-left: 4px solid white;
-	/* length of vertical guide for children nodes */
-	height: 494px;
-}
-
-@media print {
-    .subdirector > li:first-child{
-	    border-left: 4px solid black;
-    }   
-}
-/* Creates and moves administration conector line and node along x axis*/
-.departments > li:first-child{	
-	float: left;
-	left: 27.2%;
-	border-right: 4px solid white;	
-}
-
-@media print {
-    .departments > li:first-child{
-        border-right: 4px solid black;	
-    }
-}
-
-.subdirector > li:first-child a,
-.departments > li:first-child a{
-	width: 100%;
-}
-
-/* Creates and changes length of Assistant Director horizontal connectort line*/
-.subdirector > li:first-child a{	
-	left: 25px;
-}
-
-@media screen and (max-width: 767px){
-	.subdirector > li:first-child,
-	.departments > li:first-child{
-		width: 40%;	
-	}
-/* Not Sure what this does */
-	.subdirector > li:first-child{
-		right: 10%;
-		margin-right: 2px;
-	}
-/* Not Sure what this does */
-	.subdirector:after{
-		left: 49.8%;
-	}
-/* Not Sure what this does */
-	.departments > li:first-child{
-		left: 10%;
-		margin-left: 2px;
-	}
-}
-
-/* Changes length of Administration horizontal connectort line*/
-.departments > li:first-child a{
-	right: 25px;
-}
-
-/* Pam Turner box moving across x-axis*/
-.departments > li:nth-child(1) a{
-	right: 25px;
-}
-
-/* Placement of entire Department E */
-.department:first-child,
-.departments li:nth-child(2){
-	margin-left: 0;
-	clear: left;	
-}
-
-/* Creates and modifies horizontal connector line above departments */
-.departments:after{
-	content: "";
-	display: block;
-	position: absolute;
-	width: 86.5%;
-	height: 22px;	
-	border-top: 4px solid #fff;
-	border-right: 4px solid #fff;
-	border-left: 4px solid #fff;
-	margin: 0 auto;
-	/* moves entire top bar up or down og 130*/
-	top: 260px;
-	/*left: 9.1%; 26.3*/
-	right:21%;
-}
-
-.departments:before{
-	content: "";
-	display: block;
-	position: absolute;
-	width: 0%;
-	height: 40px;	
-	border-top: 2px solid #fff;
-	border-right: 2px solid #fff;
-	border-left: 2px solid #fff;
-	margin: 0 auto;
-	/* moves entire top bar up or down og 130*/
-	top: 220px;
-	left: 15%
-}
-
-.top2:after{
-	content: "";
-	display: block;
-	position: absolute;
-	width: 85%;
-	height: 22px;	
-	border-top: 4px solid #fff;
-	border-right: 4px solid #fff;
-	border-left: 4px solid #fff;
-	margin: 0 auto;
-	/* moves entire top bar up or down og 130*/
-	top: 130px;
-	left: 9.1%
-}
-.director:after{
-	content: "";
-	display: block;
-	position: absolute;
-	width: 40.55%;
-	height: 22px;	
-	border-top: 4px solid #fff;
-	border-right: 4px solid #fff;
-	border-left: 4px solid #fff;
-	margin: 0 auto;
-	/* moves entire 1/2 top bar up or down og 210*/
-	top: 200px;
-	left: 9.1%
-}
-
-
-
-@media print {
-    .departments:after{
-        border-top: 4px solid #000;
-        border-right: 4px solid #000;
-        border-left: 4px solid #000;
-    }
-}
-
-@media screen and (max-width: 767px){
-	.departments:after{
-		border-right: none;
-		left: 0;
-		width: 49.8%;
-	}  
-}
-
-@media screen and (min-width: 768px){
-	.department:first-child:before,
-   .department:last-child:before{
-    border:none;
+	box-sizing: border-box;
   }
-}
-
-/* Vertical connector lines for above department row*/
-.department:before{
+  
+  ol {
+	list-style: none;
+  }
+  
+  body {
+	margin: 50px 0 100px;
+	text-align: center;
+	font-family: "Inter", sans-serif;
+  }
+  
+  .container {
+	max-width: 1000px;
+	padding: 0 10px;
+	margin: 0 auto;
+  }
+  
+  .rectangle {
+	position: relative;
+	padding: 20px;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  
+  /* LEVEL-1 STYLES
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .level-1 {
+	width: 50%;
+	margin: 0 auto 40px;
+	background: var(--level-1);
+  }
+  
+  .level-1::before {
 	content: "";
-	display: block;
 	position: absolute;
-	width: 0;
-	height: 22px;
-	border-left: 4px solid white;
-	z-index: 1;
-	top: -22px;
-	left: 15%;
-	margin-left: -4px;
-}
-
-
-
-
-@media print {
-    .department:before{
-        border-left: 4px solid black;
-    }
-}
-
-/* Styling of Department Nodes*/
-.department{
-	border-left: 4px solid #fff;
-	/* og 18.59894921190893%; */
-	width: 12.7%;
-	float: left;
-	margin-left: 1.751313485113835%;
-	margin-bottom: 60px;
-	/* Use to shift entire department and child nodes over*/
-	right: 10%;
-}
-
-
-@media print {
-    .department{
-	    border-left: 4px solid #000;
-    }
-}
-
-/* Not sure what this does*/
-.lt-ie8 .department{
-	width: 18.25%;
-}
-
-.lt-ie8 .top3RightDep{
-	width: 18.25%;
-}
-
-@media screen and (max-width: 767px){
-	.department{
-		float: none;
-		width: 100%;
-		margin-left: 0;
-	}
-
-	.department:before{
-		content: "";
-		display: block;
-		position: absolute;
-		width: 0;
-		height: 60px;
-		border-left: 4px solid white;
-		z-index: 1;
-		top: -60px;
-		left: 0%;
-		margin-left: -4px;
-	}
-
-	.department:nth-child(2):before{
-		display: none;
-	}
-}
-
-/*  Department Node placement alter distance from first child and vertical connector lines*/
-.department > a{
-	margin: 0 0 -26px -4px;
-	z-index: 1;
-}
-
-.top3RightDep > a{
-	/* og 0 0 -26px -4px; */
-	margin: 0 0 -26px -55px;
-	z-index: 1;
-}
-
-/* Alter length department nodes extend down when hovering */
-.department > a:hover{	
-	height: 80px;
-}
-
-.top3RightDep > a:hover{	
-	height: 80px;
-}
-
-/* Shift Department Nodes over to the left so border of node alligns on top of vertical department and its child nodes*/
-.department > ul{
-	margin-top: 0px;
-	margin-bottom: 0px;
-}
-.top3RightDep > ul{
-	/* shifts lines and nodes of Jeff Thompson across y-axis 105*/
-	margin-top: 130px;
-	margin-bottom: 0px;
-}
-
-/* Controls the distance between each department child node*/
-.department li{	
-	padding-left: 25px;
-	border-bottom: 4px solid #fff;
-	height: 80px;	
-}
-
-.top3RightDep li{	
-	padding-left: 25px;
-	border-bottom: 4px solid #fff;
-	height: 80px;	
-}
-
-@media print {
-    .department li{
-        border-bottom: 4px solid #000;
-    }
-}
-
-.department li a{
-	background: #fff;
-	/* Controls distance between department and first child node*/
-	top: 48px;	
+	top: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 2px;
+	height: 20px;
+	background: var(--black);
+  }
+  
+  
+  /* LEVEL-2 STYLES
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .level-2-wrapper {
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .level-2-wrapper::before {
+	content: "";
 	position: absolute;
-	z-index: 1;
-	/* Controls the width of the child nodes*/
+	top: -20px;
+	left: 25%;
+	width: 50%;
+	height: 2px;
+	background: var(--black);
+  }
+  
+  .level-2-wrapper::after {
+	display: none;
+	content: "";
+	position: absolute;
+	left: -20px;
+	bottom: -20px;
+	width: calc(100% + 20px);
+	height: 2px;
+	background: var(--black);
+  }
+  
+  .level-2-wrapper li {
+	position: relative;
+  }
+  
+  .level-2-wrapper > li::before {
+	content: "";
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 2px;
+	height: 20px;
+	background: var(--black);
+  }
+  
+  .level-2 {
+	width: 70%;
+	margin: 0 auto 40px;
+	background: var(--level-2);
+  }
+  
+  .level-2::before {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 2px;
+	height: 20px;
+	background: var(--black);
+  }
+  
+  .level-2::after {
+	display: none;
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 0%;
+	transform: translate(-100%, -50%);
+	width: 20px;
+	height: 2px;
+	background: var(--black);
+  }
+  
+  
+  /* LEVEL-3 STYLES
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .level-3-wrapper {
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-column-gap: 20px;
 	width: 90%;
-	/* Controls the height of the children nodes*/
-	height: 60px;
-	vertical-align: middle;
-	right: -1px;
-	/* Not sure what these lines do*/
-	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjAuMjUiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
-	background-image: -moz-linear-gradient(-45deg,  rgba(0,0,0,0.25) 0%, rgba(0,0,0,0) 100%) !important;
-	background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(0,0,0,0.25)), color-stop(100%,rgba(0,0,0,0)))!important;
-	background-image: -webkit-linear-gradient(-45deg,  rgba(0,0,0,0.25) 0%,rgba(0,0,0,0) 100%)!important;
-	background-image: -o-linear-gradient(-45deg,  rgba(0,0,0,0.25) 0%,rgba(0,0,0,0) 100%)!important;
-	background-image: -ms-linear-gradient(-45deg,  rgba(0,0,0,0.25) 0%,rgba(0,0,0,0) 100%)!important;
-	background-image: linear-gradient(135deg,  rgba(0,0,0,0.25) 0%,rgba(0,0,0,0) 100%)!important;
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#40000000', endColorstr='#00000000',GradientType=1 );
-}
-
-.top3RightDep li a{
-	background: #fff;
-	/* Controls distance between department and first child node*/
-	top: 48px;	
+	margin: 0 auto;
+  }
+  
+  .level-3-wrapper::before {
+	content: "";
 	position: absolute;
-	z-index: 1;
-	/* Controls the width of the child nodes*/
-	width: 90%;
-	/* Controls the height of the children nodes*/
-	height: 60px;
-	vertical-align: middle;
-	right: -1px;
-	/* Not sure what these lines do*/
-	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjAuMjUiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
-	background-image: -moz-linear-gradient(-45deg,  rgba(0,0,0,0.25) 0%, rgba(0,0,0,0) 100%) !important;
-	background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(0,0,0,0.25)), color-stop(100%,rgba(0,0,0,0)))!important;
-	background-image: -webkit-linear-gradient(-45deg,  rgba(0,0,0,0.25) 0%,rgba(0,0,0,0) 100%)!important;
-	background-image: -o-linear-gradient(-45deg,  rgba(0,0,0,0.25) 0%,rgba(0,0,0,0) 100%)!important;
-	background-image: -ms-linear-gradient(-45deg,  rgba(0,0,0,0.25) 0%,rgba(0,0,0,0) 100%)!important;
-	background-image: linear-gradient(135deg,  rgba(0,0,0,0.25) 0%,rgba(0,0,0,0) 100%)!important;
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#40000000', endColorstr='#00000000',GradientType=1 );
-}
-
-
-
-.department li a:hover{
-	box-shadow: 8px 8px 9px -4px rgba(0,0,0,0.1);
-	height: 80px;
-	width: 95%;
-	top: 39px;
-	background-image: none!important;
-}
-
-.top3RightDep li a:hover{
-	box-shadow: 8px 8px 9px -4px rgba(0,0,0,0.1);
-	height: 80px;
-	width: 95%;
-	top: 39px;
-	background-image: none!important;
-}
-
-/* Department/ section colors */
-.department.dep-a a{ background: #FFD600; }
-.department.dep-b a{ background: #AAD4E7; }
-.department.dep-c a{ background: #FDB0FD; }
-.department.dep-d a{ background: #A3A2A2; }
-.department.dep-e a{ background: #f0f0f0; }
+	top: -20px;
+	left: calc(25% - 5px);
+	width: calc(50% + 10px);
+	height: 2px;
+	background: var(--black);
+  }
+  
+  .level-3-wrapper > li::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, -100%);
+	width: 2px;
+	height: 20px;
+	background: var(--black);
+  }
+  
+  .level-3 {
+	margin-bottom: 20px;
+	background: var(--level-3);
+  }
+  
+  
+  /* LEVEL-4 STYLES
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .level-4-wrapper {
+	position: relative;
+	width: 80%;
+	margin-left: auto;
+  }
+  
+  .level-4-wrapper::before {
+	content: "";
+	position: absolute;
+	top: -20px;
+	left: -20px;
+	width: 2px;
+	height: calc(100% + 20px);
+	background: var(--black);
+  }
+  
+  .level-4-wrapper li + li {
+	margin-top: 20px;
+  }
+  
+  .level-4 {
+	font-weight: normal;
+	background: var(--level-4);
+  }
+  
+  .level-4::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 0%;
+	transform: translate(-100%, -50%);
+	width: 20px;
+	height: 2px;
+	background: var(--black);
+  }
+  
+  
+  /* MQ STYLES
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  @media screen and (max-width: 700px) {
+	.rectangle {
+	  padding: 20px 10px;
+	}
+  
+	.level-1,
+	.level-2 {
+	  width: 100%;
+	}
+  
+	.level-1 {
+	  margin-bottom: 20px;
+	}
+  
+	.level-1::before,
+	.level-2-wrapper > li::before {
+	  display: none;
+	}
+	
+	.level-2-wrapper,
+	.level-2-wrapper::after,
+	.level-2::after {
+	  display: block;
+	}
+  
+	.level-2-wrapper {
+	  width: 90%;
+	  margin-left: 10%;
+	}
+  
+	.level-2-wrapper::before {
+	  left: -20px;
+	  width: 2px;
+	  height: calc(100% + 40px);
+	}
+  
+	.level-2-wrapper > li:not(:first-child) {
+	  margin-top: 50px;
+	}
+  }
+  
+  
+  /* FOOTER
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .page-footer {
+	position: fixed;
+	right: 0;
+	bottom: 20px;
+	display: flex;
+	align-items: center;
+	padding: 5px;
+  }
+  
+  .page-footer a {
+	margin-left: 4px;
+  }
