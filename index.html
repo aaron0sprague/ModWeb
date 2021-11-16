@@ -30,30 +30,15 @@ Description:
     <script src="jquery.orgchart.js"></script>
     <script>
     $(function() {
-            $("#organization").orgChart({container: $("#main")});
+            $("#org").orgChart();
         });
     </script>
 </head>
-<!-- <head>
-  <title>Mod Web Org Chart</title>
-  <link rel="stylesheet" href="jquery.css"/>
-  <link rel="stylesheet" href="script.js">
-  <script>
-  $(function() {
-      $("#organisation").orgChart({container: $("#main"), nodeClicked: onNodeClicked});
-  });
-  function onNodeClicked($node) {
-      var value = $node.clone().children("ul,li,img").remove().end().text();
-      if ($node.data("actor")) {
-          value += " (" + $node.data("actor") + ")";
-      }
-      $("<li>" + value + "</li>").prependTo($("#clicks"));
-  }
-  </script>
-</head> -->
+
+<!-- Code Structure Start -->
 <body>
-    <ul id="organization">
-      <li> Level 1
+    <ul id="org">
+      <li> Robert Cushman
           <ul>
             <li>Level 2
               <ul>
