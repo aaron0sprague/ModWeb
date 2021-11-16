@@ -1,16 +1,30 @@
 <!--
-Date: October 13, 2021
-Author: Cameron Goldberg, Owen Conlon
+Date: November 16th, 2021
+Author: Cameron Goldberg, Owen Conlon, Aaron Sprague
 Description:
     This file combines Owen's formatting which contains all employees from the chart.
     It also has Cameron's proof of concept for collapsing nodes.
 -->
-<html>
-    <head>
-        <link rel="stylesheet" href="jquery.css">
-        <script src="script.js"></script> 
-    </head>
 
+
+<html>
+<head>
+  <title>Mod Web Org Chart</title>
+  <link rel="stylesheet" href="demo.css"/>
+  <link rel="stylesheet" href="script.js">
+  <script>
+  $(function() {
+      $("#organisation").orgChart({container: $("#main"), nodeClicked: onNodeClicked});
+  });
+  function onNodeClicked($node) {
+      var value = $node.clone().children("ul,li,img").remove().end().text();
+      if ($node.data("actor")) {
+          value += " (" + $node.data("actor") + ")";
+      }
+      $("<li>" + value + "</li>").prependTo($("#clicks"));
+  }
+  </script>
+</head>
 <body>
   <ul id="org">
       <li> Level 1
