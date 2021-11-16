@@ -30,7 +30,7 @@ Description:
     <script src="jquery.orgchart.js"></script>
     <script>
     $(function() {
-            $("#org").orgChart();
+            $("#org").orgChart({container: $("#main")});
         });
     </script>
 </head>
@@ -110,8 +110,8 @@ Description:
           </ul>
       </li>
   </ul>
-  <div id="content">
+  <!-- <div id="content">
     <div id="main">
     </div>
-  </div>
+  </div> -->
 </body>
