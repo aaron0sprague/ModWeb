@@ -8,7 +8,33 @@ Description:
 
 
 <html>
-<head>
+  <head>
+    <title>Org Chart</title>
+    <link rel="stylesheet" href="demo.css"/>
+    <link rel="stylesheet" href="../jquery.orgchart.css"/>
+    <style>
+    div.orgChart div.node.level1 {
+        background-color: #fbcece;
+    }
+    div.orgChart div.node.level1.special {
+        background-color: white;
+    }
+    div.orgChart div.node.level2 {
+        background-color: #cefbce;
+    }
+    div.orgChart div.node.level3 {
+        background-color: #e0cefb;
+    }
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="../jquery.orgchart.js"></script>
+    <script>
+    $(function() {
+        $("#organisation").orgChart({container: $("#main"), stack: true, depth: 4});
+    });
+    </script>
+</head>
+<!-- <head>
   <title>Mod Web Org Chart</title>
   <link rel="stylesheet" href="jquery.css"/>
   <link rel="stylesheet" href="script.js">
@@ -24,9 +50,9 @@ Description:
       $("<li>" + value + "</li>").prependTo($("#clicks"));
   }
   </script>
-</head>
+</head> -->
 <body>
-  <ul id="orgChart">
+  <ul id="organization">
       <li> Level 1
           <ul>
             <li>Level 2
