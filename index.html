@@ -28,15 +28,16 @@ Description:
     </style>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="jquery.orgchart.js"></script>
-    <script>
+    <!-- <script>
     $(function() {
             $("#org").orgChart({container: $("#main")});
         });
-    </script>
+    </script> -->
 </head>
 
 <!-- Code Structure Start -->
 <body>
+  <div id="">
     <ul id="org">
       <li> Robert Cushman
           <ul>
@@ -110,8 +111,15 @@ Description:
           </ul>
       </li>
   </ul>
+  </div>
+    
   <!-- <div id="content">
     <div id="main">
     </div>
   </div> -->
+  <script>
+    $(function() {
+            $("#org").orgChart({container: $("#main")});
+        });
+    </script>
 </body>
