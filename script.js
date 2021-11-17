@@ -54,6 +54,11 @@
         });
     };
 
+    $(document).ready(function(){
+        $(".click").click(function(){
+          $(".collapse").collapse('toggle');
+        });
+
     $.fn.orgChart.defaults = {
         container  : $("body"),
         depth      : -1,
@@ -66,7 +71,7 @@
         interactive: false,
         fade       : false,
         speed      : "slow",
-        nodeClicked: function($node) {$('.collapse').collapse('toggle')},
+        nodeClicked: function($node) {},
         copyClasses: true,
         copyData   : true,
         copyStyles : true,
