@@ -54,10 +54,6 @@
         });
     };
 
-    $(document).ready(function(){
-        $(".click").click(function(){
-          $(".collapse").collapse('toggle');
-        });
 
     $.fn.orgChart.defaults = {
         container  : $("body"),
