@@ -23,7 +23,7 @@ Author: Cameron Goldberg, Owen Conlon, Aaron Sprague
 
   div.orgChart {
     border                : 1px solid #cccccc;
-    background-color      : #ffffe8;
+    background-color      : /*#ffffe8*/black;
     margin                : 10px;
     padding               : 20px;
 }
@@ -81,7 +81,7 @@ div.orgChart div.node {
     padding               : 0 4px;
     width                 : 96px;
     height                : 60px;
-    background-color      : var(--tertiary4);
+    background-color      : #ffff98;
     line-height           : 1.3em;
     border-radius         : 8px;
     box-shadow            : 4px 4px 6px #888888;
@@ -92,7 +92,7 @@ div.orgChart div.node {
 }
 
 div.orgChart div.hasChildren {
-    background-color      : #ffff98;
+    background-color      : /*#ffff98*/white;
 }
 
 div.orgChart.interactive div.hasChildren {
