@@ -112,7 +112,7 @@ div.orgChart div.adjunct.node {
     margin-left           : -110px;
     width                 : 80px;
     height                : 40px;
-    background-color      : #efefef;
+    background-color      : var(--primary1);
 }
 
 div.orgChart div.adjunct-link {
