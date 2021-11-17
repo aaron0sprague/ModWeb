@@ -23,9 +23,9 @@ Author: Cameron Goldberg, Owen Conlon, Aaron Sprague
 
   div.orgChart {
     border                : 1px solid #cccccc;
-    background-color      : /*#ffffe8*/black;
-    margin                : 10px;
-    padding               : 20px;
+    background-color      : var(--tertiary4);
+    margin                : 0px;
+    padding               : 0px;
 }
 
 div.orgChart h2 {
