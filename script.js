@@ -66,7 +66,7 @@
         interactive: false,
         fade       : false,
         speed      : "slow",
-        nodeClicked: function($node) {$('.collapse').collapse()},
+        nodeClicked: function($node) {$('.collapse').collapse('toggle')},
         copyClasses: true,
         copyData   : true,
         copyStyles : true,
