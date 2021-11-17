@@ -66,7 +66,7 @@
         interactive: false,
         fade       : false,
         speed      : "slow",
-        nodeClicked: function($node) {},
+        nodeClicked: function($node) {$('.collapse').collapse()},
         copyClasses: true,
         copyData   : true,
         copyStyles : true,
