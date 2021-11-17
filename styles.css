@@ -1,5 +1,9 @@
-/* RESET STYLES & HELPER CLASSES
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/*
+
+Date: November 16th, 2021
+Author: Cameron Goldberg, Owen Conlon, Aaron Sprague
+
+*/
 :root {
 	--primary1: #00533E;
 	--primary2: #FFC726;
@@ -117,15 +121,24 @@ div.orgChart div.adjunct-link {
     border                : 1px dashed black;
 }
 div.orgChart div.node.level1 {
-    background-color: #fbcece;
+    background-color: var(--primary1);
 }
 div.orgChart div.node.level1.special {
-    background-color: white;
+    background-color: var(--secondary1);
 }
 div.orgChart div.node.level2 {
-    background-color: #cefbce;
+    background-color: var(--secondary2);
 }
 div.orgChart div.node.level3 {
-    background-color: #e0cefb;
+    background-color: var(--secondary3);
+}
+div.orgChart div.node.level4 {
+    background-color: var(--secondary4);
+}
+div.orgChart div.node.level5 {
+    background-color: var(--secondary5);
+}
+div.orgChart div.node.level6 {
+    background-color: var(--secondary6);
 }
 
