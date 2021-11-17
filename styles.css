@@ -82,8 +82,8 @@ div.orgChart div.node {
     border                : 2px solid black;
     display               : inline-block;
     padding               : 0 4px;
-    width                 : 120px;
-    height                : 60px;
+    width                 : 240px;
+    height                : 120px;
     background-color      : #ffff98;
     line-height           : 1.3em;
     border-radius         : 4px;
