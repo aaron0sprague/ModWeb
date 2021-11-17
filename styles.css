@@ -82,8 +82,8 @@ div.orgChart div.node {
     border                : 2px solid black;
     display               : inline-block;
     padding               : 0 4px;
-    width                 : 240px;
-    height                : 120px;
+    width                 : 135px;
+    height                : 90px;
     background-color      : #ffff98;
     line-height           : 1.3em;
     border-radius         : 4px;
@@ -110,8 +110,8 @@ div.orgChart div.adjunct.node {
     position              : absolute;
     margin-top            : 8px;
     margin-left           : -110px;
-    width                 : 80px;
-    height                : 40px;
+    width                 : 135px;
+    height                : 90px;
     background-color      : var(--primary1);
 }
 
