@@ -118,9 +118,9 @@ div.orgChart div.adjunct.node {
 div.orgChart div.adjunct-link {
     display               : inline-block;
     position              : absolute;
-    margin-left           : -40px;
-    margin-top            : 30px;
-    width                 : 60px;
+    margin-left           : -45px;
+    margin-top            : 40px;
+    width                 : 40px;
     border                : 2px dashed black;
 }
 div.orgChart div.node.level1 {
