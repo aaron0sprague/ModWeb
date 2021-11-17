@@ -116,5 +116,16 @@ div.orgChart div.adjunct-link {
     width                 : 20px;
     border                : 1px dashed black;
 }
-
+div.orgChart div.node.level1 {
+    background-color: #fbcece;
+}
+div.orgChart div.node.level1.special {
+    background-color: white;
+}
+div.orgChart div.node.level2 {
+    background-color: #cefbce;
+}
+div.orgChart div.node.level3 {
+    background-color: #e0cefb;
+}
 
