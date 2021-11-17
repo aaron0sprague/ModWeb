@@ -108,7 +108,7 @@ div.orgChart div.node.hover {
 
 div.orgChart div.adjunct.node {
     position              : absolute;
-    margin-top            : 8px;
+    margin-top            : 0px;
     margin-left           : -200px;
     width                 : 140px;
     height                : 80px;
@@ -118,9 +118,9 @@ div.orgChart div.adjunct.node {
 div.orgChart div.adjunct-link {
     display               : inline-block;
     position              : absolute;
-    margin-left           : -20px;
-    margin-top            : 25px;
-    width                 : 40px;
+    margin-left           : -40px;
+    margin-top            : 30px;
+    width                 : 60px;
     border                : 2px dashed black;
 }
 div.orgChart div.node.level1 {
