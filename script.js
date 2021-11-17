@@ -64,7 +64,7 @@
         depth      : -1,
         levels     : -1,
         showLevels : -1,
-        stack      : false,
+        stack      : true,
         chartClass : "orgChart",
         hoverClass : "hover",
         nodeText   : function($node) {return $node.clone().children("ul,li").remove().end().html();},
