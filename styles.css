@@ -41,7 +41,7 @@ div.orgChart ul {
     list-style            : none;
     margin                : 4px;
     padding               : 0px;
-    font-size             : 0.2em;
+    font-size             : 0.8em;
     text-align            : left;
 }
 
@@ -82,15 +82,15 @@ div.orgChart div.node {
     border                : 2px solid black;
     display               : inline-block;
     padding               : 0 4px;
-    width                 : 96px;
+    width                 : 120px;
     height                : 60px;
     background-color      : #ffff98;
     line-height           : 1.3em;
-    border-radius         : 8px;
+    border-radius         : 4px;
     box-shadow            : 4px 4px 6px #888888;
-    -moz-border-radius    : 8px;
+    -moz-border-radius    : 4px;
     -moz-box-shadow       : 4px 4px 6px #888888;
-    -webkit-border-radius : 8px;
+    -webkit-border-radius : 4px;
     -webkit-box-shadow    : 4px 4px 6px #888888;
 }
 
